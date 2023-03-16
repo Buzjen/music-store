@@ -20,7 +20,7 @@ body {
 }
 
 header {
-    border-bottom: 1px solid #dfdfdf ;
+    border-bottom: 2px solid #dfdfdf ;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -85,7 +85,7 @@ li {
 }
 
 .search-block {
-    border: 1px solid #f2f2f2;
+    border: 2px solid #f2f2f2;
     display: flex;
     border-radius: 5px;
     padding: 0 0px;
@@ -103,7 +103,7 @@ input {
     border: 0;
     padding: 10px;
     font-size: 16px;
-    width: 345px;
+    width: 340px;
 }
 
 .favorite {
@@ -126,8 +126,9 @@ input {
     position: absolute;
     left: 0;
     top: 0;
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
     background-color: rgba(0, 0, 0, 0.5);
     z-index: 1;
 }
@@ -142,10 +143,11 @@ input {
 .basket-item {
     display: flex;
     align-items: center;
-    border: 1px solid #f2f2f2;
+    border: 2px solid #f2f2f2;
     border-radius: 10px;
     overflow: hidden;
     margin-bottom: 20px;
+    justify-content: space-between;
 }
 
 .basket-p {
