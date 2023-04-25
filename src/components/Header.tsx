@@ -1,8 +1,18 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { appContext } from "../App";
 
-function Header({ onClickBasket, basketItems }) {
-  const totalPrice = basketItems.reduce((sum, obj) => obj.price + sum, 0);
+type HeaderProps = {
+  onClickBasket: () => void;
+};
+
+const Header: React.FC<HeaderProps> = ({ onClickBasket }) => {
+  const { basketItems } = React.useContext(appContext);
+
+  const totalPrice = basketItems.reduce(
+    (sum: number, obj: any) => obj.price + sum,
+    0
+  );
 
   return (
     <header>
@@ -15,7 +25,6 @@ function Header({ onClickBasket, basketItems }) {
             src="/img/logo.jpg"
             alt="logo"
           />
-
           <div className="headerInfo">
             <h3 className="text-Upper">Music Store</h3>
             <p>Safety Mode Organic House</p>
@@ -24,13 +33,6 @@ function Header({ onClickBasket, basketItems }) {
       </Link>
       <ul className="headerRight">
         <li className="li1">
-          {/* <img
-            className="music-icon"
-            width={30}
-            height={30}
-            src="/img/card.png"
-            alt="musc-icon"
-          /> */}
           <button onClick={onClickBasket} className="total-price">
             {totalPrice} USD
           </button>
@@ -58,6 +60,6 @@ function Header({ onClickBasket, basketItems }) {
       </ul>
     </header>
   );
-}
+};
 
 export default Header;

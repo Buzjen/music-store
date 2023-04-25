@@ -1,20 +1,29 @@
 import React from "react";
 import styles from "./Card.module.css";
+import { Item } from "../../App";
 
-function Card({
-  onFavorite,
+type CardProps = {
+  title: string;
+  imgUrl: string;
+  price: number;
+  onClickPlus: (obj: Item) => void;
+  id: string;
+  added: boolean;
+};
+
+const Card: React.FC<CardProps> = ({
   title,
-  imageUrl,
+  imgUrl,
   price,
   onClickPlus,
   id,
   added = false,
-}) {
+}) => {
   const [isAdded, setIsAdded] = React.useState(added);
   const [isFavorite, setFavorite] = React.useState(false);
 
   const handlePlus = () => {
-    onClickPlus({ title, imageUrl, price, id });
+    onClickPlus({ title, imgUrl, price, id });
     setIsAdded(!isAdded);
   };
 
@@ -36,7 +45,13 @@ function Card({
           alt="Unlike"
         />
       </div>
-      <img width={133} height={133} src={imageUrl} alt="covers" />
+      <div>
+        <ul>
+          <button className={styles.selectFormat}>MP3</button>
+          <button className={styles.selectFormat}>WAV</button>
+        </ul>
+      </div>
+      <img width={133} height={133} src={imgUrl} alt="covers" />
       <h5>{title}</h5>
       <div className={styles.cardBottom}>
         <div className={styles.cardInfo}>
@@ -54,6 +69,6 @@ function Card({
       </div>
     </div>
   );
-}
+};
 
 export default Card;

@@ -2,7 +2,7 @@ import React from "react";
 import ContentLoader from "react-content-loader";
 import styles from "./Card.module.css";
 
-export default function CardSkeleton() {
+const CardSkeleton: React.FC = () => {
   return (
     <div className={styles.card}>
       <ContentLoader viewBox="0 0 155 265" height={250} width={155}>
@@ -13,4 +13,6 @@ export default function CardSkeleton() {
       </ContentLoader>
     </div>
   );
-}
+};
+
+export default CardSkeleton;

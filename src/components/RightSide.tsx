@@ -1,4 +1,19 @@
-function RightSide({ CloseBasket, onClearBasket, items = [] }) {
+import React from "react";
+import { Item } from "../App";
+
+type RightSideProps = {
+  CloseBasket: () => void;
+  onClearBasket: (id: string) => void;
+  items: Item[];
+};
+
+const RightSide: React.FC<RightSideProps> = ({
+  CloseBasket,
+  onClearBasket,
+  items,
+}) => {
+  const totalPrice = items.reduce((sum, obj) => obj.price + sum, 0);
+
   return (
     <div className="overlay">
       <div className="right-side">
@@ -20,7 +35,7 @@ function RightSide({ CloseBasket, onClearBasket, items = [] }) {
                 width={100}
                 height={100}
                 className="basket-img"
-                src={obj.imageUrl}
+                src={obj.imgUrl}
                 alt="Covers"
               />
               <div className="basket-info">
@@ -39,13 +54,13 @@ function RightSide({ CloseBasket, onClearBasket, items = [] }) {
           ))}
           <div className="total">
             <span>Total:</span>
-            <b>3.98 USD</b>
+            <b>{totalPrice} USD</b>
           </div>
           <button className="checkout">Checkout</button>
         </div>
       </div>
     </div>
   );
-}
+};
 
 export default RightSide;

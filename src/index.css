@@ -2,7 +2,7 @@ body {
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: linear-gradient(100deg, #94ecde, #5ef89e);
+  background: linear-gradient(10deg, #ffdbfb, #eaffd3);
 }
 
 * {
@@ -25,6 +25,19 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 30px;
+}
+
+footer {
+  padding: 10px;
+  display: flex;
+  border-top: 2px solid #dfdfdf;
+  background-color: #ffd4c0;
+  justify-content: center;
+}
+
+.footerInfo {
+  align-items: center;
+  text-align: center;
 }
 
 .headerLeft {
@@ -210,7 +223,7 @@ input {
   width: 100%;
   height: 40px;
   overflow: hidden;
-  background: #ec9c9c;
+  background: #14733f;
   padding: 20px;
   border: 0;
   color: #f2f2f2;
@@ -223,17 +236,52 @@ input {
 }
 
 .checkout:hover {
-  background: #a7ace6;
+  background: #293b14;
 }
 
 .checkout:active {
-  background: #ec9c9c;
+  background: #f99668;
 }
 
 .userPage {
   text-align: center;
+  min-height: 100px;
 }
 
 .notFound {
   text-align: center;
+  min-height: 100px;
+}
+
+.headerInfo {
+  text-decoration: none;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.filterButtons {
+  margin-left: 8px;
+  margin-bottom: -10px;
+}
+
+.filterButton {
+  text-align: center;
+  background-color: #ffffff;
+  width: 80px;
+  height: 20px;
+  margin-left: 12px;
+  overflow: hidden;
+  border: 1px solid #ececec;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.2s ease-in-out;
+  flex: 0 0 60px;
+  font-size: 14px;
+}
+
+.filterButton:hover {
+  background-color: bisque;
 }
